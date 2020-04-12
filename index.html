@@ -43,17 +43,11 @@
 					<div class="container-fluid">
 						<div class="navbar-holder d-flex align-items-center justify-content-between">	
 							<div class="navbar-header">	
-								<ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-
-															
-									<img class='logoAragon' src="images/aragon.svg">
+								<ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">															
 									<li class="nav-item">
-
-										<a href="dispatcherMenuAplicacion.action" class="navbar-brand">
-											<div class="brand-text d-none d-md-inline-block">
-												<strong class="text-primary">Escape Room de Viver de la Sierra</strong>
-											</div>
-										</a>
+										<div class="brand-text d-none d-md-inline-block">
+											<strong class="text-primary">Escape Room de Viver de la Sierra</strong>
+										</div>
 									</li>
 								</ul>					
 							</div>								
@@ -66,7 +60,7 @@
 			<section>
 				<div class='container-fluid'>
 					<header>
-						<h1 class='h3 display'>Título</h1>
+						<h1 class='h3 display'>Reto 1</h1>
 					</header>
 				</div>
 			</section>		
@@ -74,39 +68,55 @@
 			<section class="forms">
 				<div class="container-fluid">
 					<div class="card">
+						<div class="card-header text-white bg-primary">
+							<h4>Recuerdo</h4>
+						</div>						
 						<div class="card-body">	
 							<p>La música empieza a sonar en las fiestas y este año parece que no ha habido mucho presupuesto para la orquesta.</p>
 							<p>Yo por si acaso voy practicando para el año que viene por si me hacen tocar el teclado.</p>
-							
-							<a href='https://www.musicca.com/es/piano' target='_blank'><img src='images/piano.jpg'></a>
+							<div class="text-center">
+								<a href='https://www.musicca.com/es/piano' target='_blank'><img src='images/piano.jpg'></a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 			
 			<section class="forms">
-				<div class="container-fluid">
+				<div class="container-fluid">			
 					<div class="card">
-						<div class="card-body">	
-							1: <p>T - T - Y - T - I - U - T - T - Y - T - O - I</p>
-							2: <p>O - O - O - P - O - U - T - U - I - Y - U</p>
+						<div class="card-header text-white bg-primary">
+							<h4>Clave</h4>
+						</div>	
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-striped table-hover table-sm table-bordered">
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>T - T - Y - T - I - U - T - T - Y - T - O - I</td>											
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>O - O - O - P - O - U - T - U - I - Y - U</td>											
+										</tr>										
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>		
-			
+				</div>        
+			</section>			
+				
 			<section class="forms">
 				<div class="container-fluid">
-					<div class="card">
-						<div class="card-body">	
-							<div class="row text-small">
-								<div class="col-3">
-									<img src='images/tarta.png' width='20%'> 
-									<br/>X
-								</div>
-								<div class="col-3">
-									<img src='images/munecaAzul.png' width='20%'> 
-									<br/>A
+					<div class="row">
+						<div class="col-3">
+							<div class="card">
+								<img src="images/tarta.png" class="card-img-top img-fluid">
+								<div class="card-body">	
+									<div class="row text-small">
+										<h5 class="card-title">XA</h5>
 								</div>
 							</div>
 						</div>
@@ -117,15 +127,16 @@
 			<section class="forms">
 				<div class="container-fluid">
 					<form action="#" class="form-validate-modal">
-
-						<div class="card">				
+						<div class="card">
+							<div class="card-header text-white bg-primary">
+								<h4>Solución</h4>
+							</div>				
 							<div class="card-body">
 								<div class="row text-small">
 									<div class="col-12">
 										<div class="form-group">
 											<label>Contraseña</label>
 											<input type="text" id="password" placeholder="Contraseña" class="form-control">
-
 										</div>	
 									</div>	
 									<div class="col-12">
@@ -133,12 +144,22 @@
 											<button type="button" value="Probar" class="btn btn-primary" onClick="return validarPassword()">Verificar</button>
 										</div>	
 									</div>	
+									<div class="col-12" id="divPasswordCorrecta">
+										<div class="alert alert-success" role="alert">
+											La contraseña es correcta
+										</div>
+									</div>
+									<div class="col-12" id="divPasswordIncorrecta">
+										<div class="alert alert-danger" role="alert">
+											La contraseña es incorrecta
+										</div>
+									</div>									
 								</div>															
 							</div>
 						</div>
 					</form>
 				</div>
-			</section>					
+			</section>		
 
 			<!-- Pie de página -->
 			<footer class="main-footer">
@@ -166,9 +187,6 @@
 			feather.replace()
 		</script>		
 
-		<!-- Forms init-->
-		<script src="js/forms-advanced.js"></script>
-	
 		<!-- Main File-->
 		<script src="js/front.js"></script>
 	
@@ -181,15 +199,24 @@
 
 				if (password != passwordUsuario) 
 				{
-					alert("No es correcto");
+					$("#divPasswordCorrecta").hide();
+					$("#divPasswordIncorrecta").show();
 				}
 				else
 				{
-					alert("Correcto");
+					$("#divPasswordCorrecta").show();
+					$("#divPasswordIncorrecta").hide();
 				}
 			}
 
 		</script>
+		
+		<script>
+			$(document).ready(function(){
+				$("#divPasswordCorrecta").hide();
+				$("#divPasswordIncorrecta").hide();
+			});
+		</script>		
 		
 	</body>
 
