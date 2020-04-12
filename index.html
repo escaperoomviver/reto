@@ -1,1 +1,196 @@
-Bienvenido al escape room de Viver.
+<!DOCTYPE html>
+	    
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Escape Room Viver de la Sierra</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="all,follow">
+		
+		<!-- Bootstrap CSS-->
+		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  
+		<!-- Font Awesome CSS-->
+		<link rel="stylesheet" href="vendor/font-awesome/css/all.css">
+	
+		<!-- Google fonts - Roboto -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+		
+		<!-- theme stylesheet-->
+		<link rel="stylesheet" href="css/style.default.premium.css" id="theme-stylesheet">
+		
+		<!-- Custom stylesheet - for your changes-->
+		<link rel="stylesheet" href="css/custom.css">	
+		
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="images/favicon.bmp">
+		
+		<!-- Tweaks for older IEs-->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+	
+		<div class="pageSinMenuLateral">
+			<!-- Menú superior-->
+			<header class="header">
+				<nav class="navbar">
+					<div class="container-fluid">
+						<div class="navbar-holder d-flex align-items-center justify-content-between">	
+							<div class="navbar-header">	
+								<ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+
+															
+									<img class='logoAragon' src="images/aragon.svg">
+									<li class="nav-item">
+
+										<a href="dispatcherMenuAplicacion.action" class="navbar-brand">
+											<div class="brand-text d-none d-md-inline-block">
+												<strong class="text-primary">Escape Room de Viver de la Sierra</strong>
+											</div>
+										</a>
+									</li>
+								</ul>					
+							</div>								
+						</div>
+					</div>
+				</nav>
+			</header>
+			
+			<!-- Titulo -->
+			<section>
+				<div class='container-fluid'>
+					<header>
+						<h1 class='h3 display'>Título</h1>
+					</header>
+				</div>
+			</section>		
+			
+			<section class="forms">
+				<div class="container-fluid">
+					<div class="card">
+						<div class="card-body">	
+							<p>La música empieza a sonar en las fiestas y este año parece que no ha habido mucho presupuesto para la orquesta.</p>
+							<p>Yo por si acaso voy practicando para el año que viene por si me hacen tocar el teclado.</p>
+							
+							<a href='https://recursivearts.com/es/virtual-piano/' target='_blank'><img src='images/piano.jpg'></a>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="forms">
+				<div class="container-fluid">
+					<div class="card">
+						<div class="card-body">	
+							1: <p>T - T - Y - T - I - U - T - T - Y - T - O - I</p>
+							2: <p>O - O - O - P - O - U - T - U - I - Y - U</p>
+						</div>
+					</div>
+				</div>
+			</section>		
+			
+			<section class="forms">
+				<div class="container-fluid">
+					<div class="card">
+						<div class="card-body">	
+							<div class="row text-small">
+								<div class="col-3">
+									<img src='images/tarta.png' width='20%'> 
+									<br/>X
+								</div>
+								<div class="col-3">
+									<img src='images/munecaAzul.png' width='20%'> 
+									<br/>A
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>	
+
+			<section class="forms">
+				<div class="container-fluid">
+					<form action="#" class="form-validate-modal">
+
+						<div class="card">				
+							<div class="card-body">
+								<div class="row text-small">
+									<div class="col-12">
+										<div class="form-group">
+											<label>Contraseña</label>
+											<input type="text" id="password" placeholder="Contraseña" class="form-control">
+
+										</div>	
+									</div>	
+									<div class="col-12">
+										<div class="form-group">
+											<button type="button" value="Probar" class="btn btn-primary" onClick="return validarPassword()">Verificar</button>
+										</div>	
+									</div>	
+								</div>															
+							</div>
+						</div>
+					</form>
+				</div>
+			</section>					
+
+			<!-- Pie de página -->
+			<footer class="main-footer">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-6">
+							<p>Viver de la Sierra</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		
+		</div>
+		
+		<!-- JavaScript files-->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		
+		<!-- Font Awesome JS-->
+		<script src="vendor/font-awesome/js/all.min.js"></script>
+				
+		<!-- Feather icons-->
+		<script src="vendor/feathericons/feather.min.js"></script>		
+		<script>
+			feather.replace()
+		</script>		
+
+		<!-- Forms init-->
+		<script src="js/forms-advanced.js"></script>
+	
+		<!-- Main File-->
+		<script src="js/front.js"></script>
+	
+		<script type="text/javascript">
+			function validarPassword () 
+			{		   
+			
+				var password = "XA"
+				var passwordUsuario = document.getElementById("password").value;
+
+				if (password != passwordUsuario) 
+				{
+					alert("No es correcto");
+				}
+				else
+				{
+					alert("Correcto");
+				}
+			}
+
+		</script>
+		
+	</body>
+
+</html>
